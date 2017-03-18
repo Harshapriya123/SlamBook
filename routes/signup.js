@@ -7,12 +7,12 @@ router.use(function timeLog (req, res, next) {
   next()
 })
 
-// define the Login page route
-router.get('/', function (req, res) {
-  res.send('This is Login home page')
+// define the SignUp route
+router.post('/', function (req, res) {
+  res.send('Signing Up!!')
 })
 
-// define the Login/Details route
+// define the SignUp/Details route
 router.get('/details', function (req, res) {
   res.send('About You')
 })
