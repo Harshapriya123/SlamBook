@@ -31,8 +31,11 @@ app.use('/signup', signup)
 app.use('/user', user)
 
 
-app.listen(8080, function(){
-	console.log('Example app running');
+//The Node.js platform sets the PORT environment variable to the port to which the proxy server passes traffic.
+var port = process.env.PORT || 3000;
+
+var server = app.listen(port, function () {
+        console.log('Server running at http://127.0.0.1:' + port + '/');
 });
 
 
