@@ -22,7 +22,7 @@ router.use(function timeLog (req, res, next) {
 
 // define the SignUp route
 router.post('/', function (req, res) {
-  res.send('Signing Up!!')
+  //res.send('Signing Up!!')
   var item = {
     'email': {'S': req.body.email},
     'name': {'S': req.body.name},
