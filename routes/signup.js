@@ -10,7 +10,7 @@ AWS.config.update({
 
 });
 
-var ddb = AWS.DynamoDB();
+var ddb = new AWS.DynamoDB();
 
 
 
