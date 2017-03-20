@@ -27,7 +27,7 @@ router.post('/', function (req, res) {
     'email': {'S': req.body.email},
     'name': {'S': req.body.name},
     'phone':{'S': req.body.phone},
-    'zip-code':{'S': req.body.zip-code}
+    'zip':{'S': req.body.zip}
   };
 
   ddb.putItem({
