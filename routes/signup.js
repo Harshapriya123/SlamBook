@@ -2,7 +2,17 @@ var express = require('express')
 var router = express.Router();
 var AWS = require('aws-sdk');
 
+AWS.config.update({
+	region: "us-west-2",
+	endpoint: "dynamodb.us-west-2.amazonaws.com",
+	accessKeyId: "",
+	secretAccessKey: ""
+
+});
+
 var ddb = AWS.DynamoDB();
+
+
 
 // middleware that is specific to this router
 router.use(function timeLog (req, res, next) {
