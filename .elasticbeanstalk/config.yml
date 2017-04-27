@@ -1,19 +1,16 @@
 branch-defaults:
   master:
-    environment: Custom-env-1
-environment-defaults:
-  Custom-env-1:
-    branch: null
-    repository: null
+    environment: dev-env
 global:
   application_name: SlamBook
-  default_ec2_keyname: null
-  default_platform: arn:aws:elasticbeanstalk:us-west-2::platform/Node.js running on
-    64bit Amazon Linux/4.0.0
+  branch: null
+  default_ec2_keyname: test
+  default_platform: Node.js
   default_region: us-west-2
   instance_profile: null
   platform_name: null
   platform_version: null
-  profile: null
+  profile: eb-cli
+  repository: null
   sc: git
   workspace_type: Application

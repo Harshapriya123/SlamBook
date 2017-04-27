@@ -19,7 +19,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', function(req, res){
-	res.render('index', {
+	res.render('stream', {
 		static_path: '/static',
 		theme: process.env.THEME || 'flatly',
 		flask_debug: process.env.FLASK_DEBUG || 'false'
@@ -37,32 +37,3 @@ var port = process.env.PORT || 3000;
 var server = app.listen(port, function () {
         console.log('Server running at http://127.0.0.1:' + port + '/');
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
