@@ -8,8 +8,8 @@ app.use('/static', express.static(path.join(__dirname, 'public')))
 aws.config.update({
 	region: "us-west-2",
 	endpoint: "dynamodb.us-west-2.amazonaws.com",
-	accessKeyId: "AKIAIV6VQY4AND4DCCUQ", //add key here
-	secretAccessKey: "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" //add key here
+	accessKeyId: "", //add key here
+	secretAccessKey: "" //add key here
 });
 
 // middleware that is specific to this router
