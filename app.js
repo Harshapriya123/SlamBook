@@ -2,7 +2,7 @@ var express = require('express')
 var path = require('path')
 var bodyParser = require('body-parser');
 var signup = require('./routes/signup')
-var user = require('./routes/user')
+var login = require('./routes/login')
 
 var app = express()
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -19,6 +19,14 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', function(req, res){
+	res.render('index', {
+		static_path: '/static',
+		theme: process.env.THEME || 'flatly',
+		flask_debug: process.env.FLASK_DEBUG || 'false'
+	});
+});
+
+app.get('/stream', function(req, res){
 	res.render('stream', {
 		static_path: '/static',
 		theme: process.env.THEME || 'flatly',
@@ -28,7 +36,7 @@ app.get('/', function(req, res){
 
 //Add Routers Below
 app.use('/signup', signup)
-app.use('/user', user)
+app.use('/login', login)
 
 
 //The Node.js platform sets the PORT environment variable to the port to which the proxy server passes traffic.

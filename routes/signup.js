@@ -5,8 +5,8 @@ var AWS = require('aws-sdk');
 AWS.config.update({
 	region: "us-west-2",
 	endpoint: "dynamodb.us-west-2.amazonaws.com",
-	accessKeyId: "AKIAIVVYW6LCTP7IZKGA",
-	secretAccessKey: "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"
+	accessKeyId: "AKIAIV6VQY4AND4DCCUQ",
+	secretAccessKey: "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"
 
 });
 
@@ -25,11 +25,13 @@ router.post('/', function (req, res) {
   //res.send('Signing Up!!')
   var item = {
     'email': {'S': req.body.email},
+	'password': {'S': req.body.password},
     'name': {'S': req.body.name},
     'phone':{'S': req.body.phone},
     'zip':{'S': req.body.zip}
   };
-
+	console.log("inside signup post::", req.body)
+	console.log("inside signup post::", req.body.email)
   ddb.putItem({
     'TableName': 'StartupSignupsTable',
     'Item': item,
